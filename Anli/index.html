@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>虫子人力</title>
+		<link rel="shortcut icon" href="/ico.ico" type="image/x-icon" />
+		<link href="../templets/default/style/bootstrap.min.css" rel="stylesheet">
+		<link href="../templets/default/style/base.css" rel="stylesheet">
+		<link href="../templets/default/style/style.css" rel="stylesheet" type="text/css">
+		<link href="../templets/default/style/media.css" rel="stylesheet" type="text/css" />
+		<link href="../templets/default/style/royalslider.css" rel="stylesheet">
+		<link rel="icon" href="/czrl/favicon.ico"/>
+	</head>
+
+	<body>
+		<div class="pb_heigt"></div>
+		<!-- banner -->
+		<div class="city-banner">
+			<div class="bout-imgbaner anli-banner"></div>
+			<img src="../templets/default/images/case-banner.jpg" style="min-height: 200px;">
+		</div>
+		<div class="c-midcont">
+			<div class="container">
+				<div class="col-md-9 cont-lft">
+					<div class="lis-lanmu c-cased">
+						<div class="anli-tit f20 p-b-10"><span></span>成功案例 </div>
+					</div>
+					<div class="c-lisjob m-b-20" id="cases">
+						
+					</div>
+
+					<div class="clearfix"></div>
+
+					<div class="page_list col-lg-12">
+						<link rel="stylesheet" href="/czrl/templets/default/style/jquery.pagination.css" />
+						<style>
+							.pageShow {
+								display: inline-block;
+							}
+						</style>
+						<script src="/czrl/jquery-2.1.0.js"></script>
+						<script src="/czrl/templets/default/js/jquery.pagination.min.js"></script>
+						<div class="box page_box">
+							<div id="pagination" class="page fl pageShow"></div>
+							<div class="info fl pageShow">
+								<p>共：<span id="page_pages">0</span>页<span id="page_total">0</span>条</p>
+							</div>
+						</div>
+						<script>
+							function showPageInfo(current, pages, total, count, callback) {
+								$("#page_pages").html(pages);
+								$("#page_total").html(total);
+								$("#pagination").pagination({
+									currentPage: current,
+									totalPage: pages,
+									isShow: true,
+									count: count,
+									homePageText: "首页",
+									endPageText: "尾页",
+									prevPageText: "上一页",
+									nextPageText: "下一页",
+									callback: function(currentClick) {
+										callback(currentClick);
+									}
+								});
+							};
+						</script>
+					</div>
+					<!--分页end-->
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<!--案例详情弹窗-->
+		<div id="j-module1" class="c-jobtan">
+			<div class="c-modalBox c-ggao-width">
+				<p class="c-modalBox-title f16 gray4a4a">案例详情<i class="i-close c-p pull-right f24 gray9b9b">×</i></p>
+				<div class="c-modalBox-content">
+					<div class="tan-mid-neirong m-c">
+						<div class="lst-content">
+							<p class="f28 m-b-10">
+								<a href="javascript:void(0)" class="gray222">成功案例<span class="pull-right c-pmoney m-b-10"></span></a>
+							</p>
+							<div class="clearfix"></div>
+							<p class="f14 gray9b9b9b">
+								<!-- 来源：沃锐人才     浏览次数：154  --><span class="f12 gray9b9b pull-right "></span></p>
+							<div class="clearfix"></div>
+						</div>
+						<div class="c-job-nr">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="c-modalBg "></div>
+		</div>
+		<!--公共头部start-->
+		<div class="topeade navbar-fixed-top" id="banner_top">
+		</div>
+		<!--公共尾部end-->
+		<div id="container_footer"></div>
+		<script>
+			window.location.hash = "#5";
+			$("#banner_top").load("/czrl/banner.html");
+			$('#container_footer').load('/czrl/footer.html');
+		</script>
+		<script src="../templets/default/js/bootstrap.min.js"></script>
+		<script src="../templets/default/js/forms.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+	</body>
+
+</html>

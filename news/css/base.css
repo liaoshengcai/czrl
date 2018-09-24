@@ -1,0 +1,395 @@
+/*
+ * 初始化
+ */
+
+body {
+    font-family: tahoma,arial,"Hiragino Sans GB","Microsoft YaHei","SimSun", sans-serif;
+    color: #666;
+    background: #fff;
+}
+
+body,div,header,section,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td,
+s {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    display: inline-block;
+}
+
+em {
+    font-style: normal;
+}
+.c-in-blk{
+    display: inline-block;
+}
+.c-blk{
+    display: block;
+}
+
+/* a */
+
+a:focus {
+    outline: none;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    color: #333;
+}
+
+a:visited,
+a:link {
+    text-decoration: none;
+}
+
+
+/* 元素i、select、input、textarea、button */
+
+i {
+    vertical-align: middle;
+}
+
+i,
+label,
+input[type='checkbox'] {
+    vertical-align: middle;
+}
+
+
+
+/*英文折行*/
+
+p,
+dd {
+    word-break: break-all;
+}
+
+
+/* bootstrap 栅格系统 固定容器 */
+
+.row {
+    margin: 0;
+}
+
+.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-10,
+.col-md-11,
+.col-md-12,.col-xs-1,.col-xs-2,.col-xs-3,.col-xs-8,.col-xs-10 {
+    padding: 0 2px;
+}
+
+.form-horizontal .form-group {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.form-horizontal .form-group .tzw {
+    line-height: 30px;
+    display: inline-block;
+    height: 30px;
+    margin: 0 5px;
+}
+
+
+
+
+/*高亮*/
+
+.highlight {
+    font-weight: normal;
+    color: red;
+}
+
+
+/*定位*/
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.fixed {
+    position: fixed;
+}
+
+
+/* 内边距 */
+
+.p-l-5 {
+    padding-left: 5px;
+}
+.p-b-1{
+    padding-bottom: 1px;
+}
+.p-t-15 {
+    padding-top: 15px;
+}
+.p-r-10 {
+    padding-right: 10px;
+}
+.p-b-10 {
+    padding-bottom: 10px;
+}
+.p-b-40 {
+    padding-bottom: 40px;
+}
+.m-t-8{
+    margin-top: 8px;
+}
+.m-t-10{
+    margin-top: 10px;
+}
+.m-t-20 {
+    margin-top: 20px;
+}
+.m-t-30 {
+    margin-top: 30px;
+}
+.m-t-40 {
+    margin-top: 40px;
+}
+.m-t-50{
+    margin-top: 50px;
+}
+.m-l-20{
+    margin-left: 20px;
+}
+.m-l-40{
+    margin-left: 40px;
+}
+.m-l-5 {
+    margin-left: 5px;
+}
+.m-r-5 {
+    margin-right: 5px;
+}
+.m-b-5 {
+    margin-bottom: 5px;
+}
+.m-b-10 {
+    margin-bottom: 10px;
+}
+.m-b-20 {
+    margin-bottom: 20px;
+}
+.m-b-30 {
+    margin-bottom: 30px;
+}
+.m-b-50 {
+    margin-bottom: 50px;
+}
+/* 居中 */
+
+.m-c {
+    margin: 0 auto;
+}
+
+
+/* 对齐方式 */
+
+.t-c-f {
+    text-align: center !important;
+}
+
+.t-l-f {
+    text-align: left !important;
+}
+
+.t-r-f {
+    text-align: right !important;
+}
+
+
+/* 缩进 */
+
+.indent {
+    text-indent: 2em;
+}
+
+
+/* 鼠标指针样式  */
+
+.c-p {
+    cursor: pointer;
+}
+
+.c-d {
+    cursor: default;
+}
+
+
+/* 省略 */
+
+.el-sl {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+/* 字体样式 */
+
+.f12 {
+    font-size: 12px;
+    font-size: 1.2rem;
+}
+.f13 {
+    font-size: 13px;
+    font-size: 1.3rem;
+}
+
+.f14 {
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+
+.f16 {
+    font-size: 16px;
+    font-size: 1.6rem;
+}
+
+.f18 {
+    font-size: 18px;
+    font-size: 1.8rem;
+}
+.f20 {
+    font-size: 20px;
+    font-size: 2rem;
+}
+.f22 {
+    font-size: 22px;
+    font-size: 2.2rem;
+}
+.f24 {
+    font-size: 24px;
+    font-size: 2.4rem;
+}
+.f26 {
+    font-size: 26px;
+    font-size: 2.6rem;
+}
+.f28 {
+    font-size: 28px;
+    font-size: 2.8rem;
+}
+.b {
+    font-weight: bold;
+}
+
+.b-n {
+    font-weight: normal;
+}
+
+
+/* 颜色值
+ * ===============
+ */
+
+.gray222 {
+    color: #222;
+}
+.white {
+    color: #fff;
+}
+.gray4a4a{
+    color: #4A4A4A
+}
+.gray666 {
+    color: #666;
+}
+.gray9b9b {
+    color: #9B9B9B;
+}
+
+.gray333 {
+    color: #333;
+}
+
+.gray333-bg {
+    background: #333;
+}
+
+.yellow {
+    color: #ffa800;
+}
+
+.yellow-bg {
+    background: #ffa800;
+}
+
+.pink {
+    color: #ff8400;
+}
+
+.pink-bg {
+    background: #ff8400;
+}
+
+.red {
+    color: #f40;
+}
+
+.preds{
+    color: #FF0303
+}
+
+.green {
+    color: #33a407;
+}
+
+.green-bg {
+    background: #33a407;
+}
+
+.blue {
+    color: #4ab8f4;
+}
+
+.blue-bg {
+    background: #4ab8f4;
+}
+

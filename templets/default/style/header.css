@@ -1,0 +1,37 @@
+@CHARSET "UTF-8";
+.layui-layout-admin .layui-logo {
+	width: 800px;
+	font-size: 16px;
+	color:#fff;
+	text-align: left;
+	padding-left:20px;
+}
+.layui-layout-admin .layui-logo label {
+	margin-left:10px;
+}
+.layui-layout-admin .layui-logo img {
+	width:250px;
+}
+.layui-layout-admin .layui-logo>i {
+	font-size:35px;
+}
+.layui-nav-tree .layui-nav-item {
+	border:none;
+}
+.layui-layout-admin .layui-footer {
+	left: 40px;
+	text-align: center;
+}
+
+#menuFrame {
+	overflow: visible;
+	border: 0px;
+	width: 100%;
+	height: 99%;
+	/* margin-top: 30px;
+	margin-left: 30px; */
+}
+
+.layui-footer {
+	text-align: center;
+}

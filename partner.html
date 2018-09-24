@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="pb_heigt"></div>
+    <!-- banner -->
+	<div class="city-banner">
+    	<div class="bout-imgbaner custom-baner"></div>
+    	<img src="templets/default/images/clients-banner.jpg" alt="合作客户">
+    </div>
+	<div class="clearfix"></div>
+	<!-- 关于我们 -->
+	<div class="m-t-50 container">
+		<div class="row">
+			<div class="col-xs-12 col-md-8 m-b-20">
+ 				<div class="c-custom gray222">
+ 					<span class="f20"><em></em> OUR CLIENTS</span>
+					<p class="f28 p-b-10"> 虫子人力合作客户</p>
+					<p class="f18 gray9b9b c-server m-b-10">
+						沃锐猎头机构在“北京+上海”双中心的战略规划下，累积了48个行业不同层次的岗位招聘经验，合作客户超过8000家，二次合作率在81.3%以上。以下是沃锐猎头部分企业客户：
+					</p>
+ 				</div>
+			</div>
+			<div class="col-xs-12 col-md-4 m-b-20 f24">
+ 				<a href="javascript:void(0)" onclick="swtClick(); return false" class="trans white quite-zpin">快速招聘 <img src="/templets/default/images/arrow-right-hover.png"></a>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<!-- 合作logo-->
+	<div class="container">
+		<div class="row comer-logo m-b-20" id="partner">
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	</body>
+	<script type="text/javascript" src="templets/default/js/jquery-3.3.1.min.js" ></script>
+	<script>
+		$.get("/api/partner/selectAll",function(res){
+			console.log(res.data)
+			for (var i = 0; i < res.data.length; i++) {
+				$("#partner").append("<div class='col-md-2 col-xs-4 col-sm-3'><img src='"+res.data[i].icon+"' class='c-blk m-c' alt='"+res.data[i].name+"'></div>")
+			};
+		})
+	</script>
+</html>

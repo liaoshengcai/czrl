@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<meta charset="UTF-8">
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<title>虫子人力</title>
+
+		<link rel="shortcut icon" href="/ico.ico" type="image/x-icon" />
+
+		<link href="../templets/default/style/bootstrap.min.css" rel="stylesheet">
+
+		<link href="../templets/default/style/base.css" rel="stylesheet">
+
+		<link href="../templets/default/style/rs-minimal-white.css" rel="stylesheet">
+
+		<link href="../templets/default/style/royalslider.css" rel="stylesheet">
+
+		<link href="../templets/default/style/style.css" rel="stylesheet" type="text/css">
+
+		<link href="../templets/default/style/media.css" rel="stylesheet" type="text/css" />
+		<link href="css/news_index.css" rel="stylesheet" type="text/css" />
+		<link rel="icon" href="/czrl/favicon.ico" />
+		<!--<script src="../templets/default/js/jquery-3.3.1.min.js"></script>
+-->
+		<script src="js/dedeajax2.js"></script>
+
+	</head>
+
+	<body>
+
+		<style>
+			.c-down-city .c-nav-ctname li {
+				padding: 4px;
+			}
+		</style>
+		<div class="pb_heigt"></div>
+		<!-- banner -->
+
+		<div class="city-banner clearfix">
+
+			<div class="news-imgbnr news-banner"></div>
+
+			<div class="bgwrd-info infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="400" data-move-effect="left" data-speed="500">
+
+				<h2>资讯中心</h2>
+
+				<p>news center</p>
+
+			</div>
+
+		</div>
+
+		<!-- 资讯中心 -->
+
+		<div class="c-newscenter m-t-20">
+			<div class="container">
+				<div class="row m-b-10 news_list_show">
+				</div>
+				<!--分页start-->
+
+				<div class="page_list col-lg-12">
+					<link rel="stylesheet" href="/czrl/templets/default/style/jquery.pagination.css" />
+					<style>
+						.pageShow {
+							display: inline-block;
+						}
+					</style>
+					<script src="/czrl/jquery-2.1.0.js"></script>
+					<script src="/czrl/templets/default/js/jquery.pagination.min.js"></script>
+					<div class="box page_box">
+						<div id="pagination" class="page fl pageShow"></div>
+						<div class="info fl pageShow">
+							<p>共：<span id="page_pages">0</span>页<span id="page_total">0</span>条</p>
+						</div>
+					</div>
+					<script>
+						function showPageInfo(current, pages, total, count, callback) {
+							$("#page_pages").html(pages);
+							$("#page_total").html(total);
+							$("#pagination").pagination({
+								currentPage: current,
+								totalPage: pages,
+								isShow: true,
+								count: count,
+								homePageText: "首页",
+								endPageText: "尾页",
+								prevPageText: "上一页",
+								nextPageText: "下一页",
+								callback: function(currentClick) {
+									callback(currentClick);
+								}
+							});
+						};
+					</script>
+				</div>
+				<!--分页end-->
+
+			</div>
+		</div>
+		</div>
+		</div>
+		<div class="clearfix"></div>
+
+		<!--公共头部start-->
+		<div class="topeade navbar-fixed-top" id="banner_top">
+		</div>
+		<!--公共尾部end-->
+		<div id="container_footer"></div>
+		<script>
+			window.location.hash = "#6";
+			$("#banner_top").load("/czrl/banner.html");
+			$('#container_footer').load('/czrl/footer.html');
+		</script>
+		<script src="../templets/default/js/bootstrap.min.js"></script>
+		<script src="../templets/default/js/forms.js"></script>
+		<script src="js/news_index.js"></script>
+
+	</body>
+
+</html>

@@ -1,0 +1,13 @@
+.layui-table-cell{
+	padding: 5 0;
+}
+.float-left{
+	float: left;
+	clear:none
+}
+.clearfix{
+	clear: both;
+}
+.textSet{
+	margin-right: 20px;
+}

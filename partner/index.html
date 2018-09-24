@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<meta charset="UTF-8">
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<title>合作客户_沃锐猎头_专业的猎头公司_上海最值得信赖的猎头公司</title>
+
+		<meta name="keywords" content="猎头，猎头公司，猎头合作，合作客户" />
+
+		<meta name="description" content="沃锐猎头公司在上海猎头公司排名中名列前茅，专注于为企业提供中高端人才服务，成立以来与恒久财富、腾讯、TCL等多家大型企业建立了长久合作关系！" />
+
+		<link rel="shortcut icon" href="/ico.ico" type="image/x-icon" />
+
+		<link href="../templets/default/style/bootstrap.min.css" rel="stylesheet">
+
+		<link href="../templets/default/style/base.css" rel="stylesheet">
+
+		<link href="../templets/default/style/style.css" rel="stylesheet" type="text/css">
+
+		<link href="../templets/default/style/media.css" rel="stylesheet" type="text/css" />
+
+		<link href="../templets/default/style/royalslider.css" rel="stylesheet">
+		
+		<link rel="icon" href="/czrl/favicon.ico"/>
+
+		<script src="../templets/default/js/jquery-3.3.1.min.js"></script>
+		
+		
+
+	</head>
+
+	<body>
+
+		<style>
+			.c-down-city .c-nav-ctname li {
+				padding: 4px;
+			}
+			
+			.c-serve-ph {
+				width: 240px;
+			}
+		</style>
+		<div class="pb_heigt"></div>
+
+		<!-- banner -->
+
+		<div class="city-banner">
+
+			<div class="bout-imgbaner custom-baner"></div>
+
+			<img src="images/clients-banner.jpg" alt="合作客户">
+
+		</div>
+
+		<div class="clearfix"></div>
+
+		<!-- 关于我们 -->
+
+		<div class="m-t-50 container">
+
+			<div class="row">
+
+				<div class="col-xs-12 col-md-8 m-b-20">
+
+					<div class="c-custom gray222">
+
+						<span class="f20"><em></em> OUR CLIENTS</span>
+
+						<p class="f28 p-b-10"> 沃锐合作客户</p>
+
+						<p class="f18 gray9b9b c-server m-b-10">
+
+							沃锐猎头机构在“北京+上海”双中心的战略规划下，累积了48个行业不同层次的岗位招聘经验，合作客户超过8000家，二次合作率在81.3%以上。以下是沃锐猎头部分企业客户：
+
+						</p>
+
+					</div>
+
+				</div>
+			</div>
+
+			<div class="clearfix"></div>
+
+		</div>
+
+		<!-- 合作logo-->
+
+		<div class="container">
+
+			<div class="row comer-logo m-b-20" id="partner">
+
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<script src="/czrl/jquery-2.1.0.js"></script>
+		<!--公共头部start-->
+		<div class="topeade navbar-fixed-top" id="banner_top">
+		</div>
+		<!--公共尾部end-->
+		<div id="container_footer"></div>
+		<script>
+			$("#banner_top").load("/czrl/banner.html");
+			$('#container_footer').load('/czrl/footer.html');
+		</script>
+		<script src="../templets/default/js/bootstrap.min.js"></script>
+		<script src="../templets/default/js/tongji.js"></script>
+		<script src="../templets/default/js/forms.js"></script>
+		<script>
+			$.get("/api/partner/selectAll", function(res) {
+				console.log(res.data)
+				for (var i = 0; i < res.data.length; i++) {
+					$("#partner").append("<div class='col-md-2 col-xs-4 col-sm-3'><img src='/api/file/preview/" + res.data[i].icon + "' class='c-blk m-c' ></div>")
+				};
+			})
+		</script>
+	</body>
+
+</html>

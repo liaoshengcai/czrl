@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>合作伙伴管理</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../templets/default/plugin/layui/css/layui.css"  media="all">
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+  .layui-table img{
+  	width: 80px!important;
+  	height: 80px!important;
+  }
+  </style>
+</head>
+<body> 
+<div class="demoTable">
+	  <button class="layui-btn" onclick="addParters()">单个添加合作伙伴</button>
+</div>
+<!--单个添加合作伙伴-->
+<div id="Addpartners" hidden="">
+		<form class="layui-form layui-form-pane" action="">
+			<div class="layui-form-item">
+				<label class="layui-form-label"><span style="color: red; margin-right: 5px;">*</span>伙伴名称</label>
+				<div class="layui-input-inline">
+					<input type="text" name="partners"  autocomplete="off" class="layui-input" >
+				</div>
+			</div>
+			<div class="layui-form-item ">
+				<div class="layui-inline" style="margin-top: 20px;">
+					<label class="layui-form-label"><span style="color: red; margin-right: 5px;">*</span>合作照片</label>
+					<div class="layui-input-block">
+						<input type="file" id="icon" style="padding-top: 10px;"/>
+					</div>
+				</div>
+				<div class="layui-inline stu-picture-info">
+					<label></label>
+				</div>
+			</div>
+		</form>
+</div>
+<table class="layui-table" lay-filter="demo" id="partnershow"></table>
+<script type="text/html" id="barDemo">
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script src="../templets/default/plugin/layui/layui.js" charset="utf-8"></script>
+<script src="../templets/default/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/partner.js" ></script>
+<script type="text/html" id="titleTpl">
+  <img src="/api/file/preview/{{d.icon}}"/>
+</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>虫子人力</title>
+<link rel="stylesheet" href="../templets/default/plugin/layui/css/layui.css" />
+<link rel="stylesheet" href="../templets/default/style/iconfont.css">
+<link rel="stylesheet" href="../templets/default/style/header.css" />
+<link rel="icon" href="/czrl/favicon.ico"/>
+<style>
+.layui-layout-admin .layui-header {
+    background-color: #0099cc;
+}
+.layui-nav{
+	    background-color: #0087b4;
+}
+.layui-bg-black {
+    background-color: #0099cc!important;
+}
+.layui-layout-admin .layui-logo img {
+    width: 200px;
+    height: 50px;
+}
+</style>
+<script>
+	var token=sessionStorage.getItem("token");
+	if(token==null||token==""){
+		window.location.href="/czrl/login.html"
+	}
+</script>
+</head>
+<body class="layui-layout-body">
+	<div class="layui-layout layui-layout-admin">
+		<div class="layui-header">
+			<div class="layui-logo"><a href="/czrl/index.html"><img src="/czrl/templets/default/images/logo-white.png"/></a></div>
+			<ul class="layui-nav layui-layout-right">
+				<li class="layui-nav-item">欢迎&nbsp&nbsp系统管理员</li>
+				<li class="layui-nav-item"><a class="loginOut" style="cursor:pointer ">退出</a></li>
+			</ul>
+		</div>
+
+		<div class="layui-side layui-bg-black">
+			<div class="layui-side-scroll">
+				<ul class="layui-nav layui-nav-tree" lay-filter="test">
+					<li class="layui-nav-item layui-nav-itemed"><a href="/czrl/admin/jobs.html" target="menuFrame">猎头职位管理</a>
+					</li>
+					<li class="layui-nav-item"><a href="/czrl/admin/successful-case.html" target="menuFrame">成功案例管理</a>
+					</li>
+					<li class="layui-nav-item"><a href="/czrl/admin/news.html" target="menuFrame">行业资讯管理</a>
+					</li>
+					<li class="layui-nav-item"><a href="/czrl/admin/contact-me.html" target="menuFrame">招聘邮件管理</a>
+					</li>
+					<li class="layui-nav-item"><a href="/czrl/admin/link.html" target="menuFrame">友情链接管理</a>
+					</li>
+					<li class="layui-nav-item"><a href="/czrl/admin/partner.html" target="menuFrame">合作伙伴管理</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="layui-body">
+			<!-- 内容主体区域 -->
+			<iframe name="menuFrame" id="menuFrame" src="/czrl/admin/jobs.html"></iframe>
+		</div>
+		<div class="layui-footer">@虫子（武汉）企业管理咨询有限公司</div>
+	</div>
+	<script type="text/javascript" src="/czrl/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="/czrl/templets/default/plugin/layui/layui.js"></script>
+	<script>
+		layui.use('element', function() {
+			var element = layui.element;
+		});
+		$(".loginOut").click(function(){
+//			$.post("loginController/logout",function(){
+//			});
+			sessionStorage.removeItem("token");
+			location.href = "../login.html";
+		});
+	</script>
+</body>
+
+</html>

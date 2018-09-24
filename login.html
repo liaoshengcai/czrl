@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>虫子人力</title>
+<link rel="stylesheet" href="templets/default/style/reset.css">
+<link rel="stylesheet" href="templets/default/style/loginstyle.css">
+<link rel="stylesheet" href="templets/default/style/login.css">
+<link rel="stylesheet"  href="templets/default/plugin/layui/css/modules/layer/default/layer.css" />
+<link rel="icon" href="/czrl/favicon.ico"/>
+</head>
+<body>
+<div class="wrapper" style="background-color: white;">
+  <div  class="login-top" style="height: 80px;">
+	<div>
+		<a href="/czrl"><img src="templets/default/images/logo.jpg" style="width: 240px;    margin-top: -25px;"/>	</a>
+	</div>
+  </div>  
+  <div class="login-topBg">
+  	<div class="login-topStyle" >
+          <div class="login-img">
+          	<p class="login-img-msg login-img-msg1"><span>虫子（武汉）企业管理咨询有限公司</span></p>
+          	<div class="login-img-item">
+          		<ul>
+          			<li><li></li>
+          		</ul>
+          	</div>
+          </div>
+          <div class="login-topStyle3" id="loginStyle" style="margin-top: 75px;">
+            <h3 style="text-align: center;">用户登录</h3>
+            <div class="ui-form-item loginUsername">
+              <input type="username" placeholder="请输入用户名">
+            </div>
+            <div class="ui-form-item loginPassword">
+              <input type="password" placeholder="请输入密码">
+            </div>  
+            <div class="ui-form-item verifyCode" >
+              <input type="text" placeholder="请输入验证码" style="height: 30px;  margin-top: -15px;"><img id="vcode" src="" style="width: 60px;height: 30px;cursor: pointer;" onclick="getCode()"/>
+            </div> 
+            <a class="btnStyle btn-register">立即登录</a> 
+          </div>
+        </div>
+    </div>
+  <div class="footer"> 
+
+			<p>版权所有 联系地址：湖北省武汉市洪山区关山大道光谷软件园A10栋3F</p>
+
+			<p>INSECT(WUHAN) ENTERPRISE MANAGEMENT CONSULTING CO.LTD</p>
+
+			<p>联系电话:027-65023103 / 027-62432833 Noco：18672758044    Renee：18571530202</p>
+
+ 	</div>
+
+</div>
+<script type="text/javascript" src="/czrl/jquery-2.1.0.js"></script>
+
+<script src="/czrl/templets/default/js/bootstrap.min.js"></script>
+
+<script src="/czrl/templets/default/js/layer.js" charset="utf-8"></script>
+
+<script>
+var cid = "";
+$(function() {
+
+	//为input做输入限制(不能输入空格)
+
+	$(".loginUsername>input,.loginPassword>input").on("keyup", function() {
+
+		var reg = new RegExp("\\s");
+
+		var r = this.value.match(reg);
+
+		if (r != null) {
+
+			this.value = this.value.replace(/[, ]/g, '');
+
+			layer.msg("用户名和密码中均不能含有空格！");
+
+		}
+
+	});
+
+	$(".btn-register").on("click", function() {
+		var userName = $(".loginUsername input").val();
+		var password = $(".loginPassword input").val();
+		var code = $(".verifyCode input").val();
+		if (userName == "" || password == "" || code == "") {
+			layer.msg("请正确输入");
+			return;
+		}
+		$.get("/api/user/login", {
+			"userName": userName,
+			"password": password,
+			"code": code,
+			"cid": cid
+		}, function(result) {
+			if (result.code == 0) {
+				sessionStorage.setItem("token", cid);
+				window.location.href = "admin/admin.html";
+			} else {
+				layer.msg(result.msg);
+				getCode();
+			}
+		});
+
+	});
+
+});
+/*回车提交*/
+$("body").keydown(function() {
+	if (event.keyCode == "13") {
+		$(".btn-register").click();
+	}
+})
+getCode();
+
+function getCode() {
+	$.get("/api/user/getCid", function(res) {
+		if (res.code == 0) {
+			cid = res.cid;
+			$("#vcode").attr("src", "/api/user/verifyCode?cid=" + res.cid);
+		} else {
+			layer.msg("请求失败")
+		}
+	})
+}</script>
+
+</body>
+</html>

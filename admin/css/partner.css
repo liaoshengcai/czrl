@@ -1,0 +1,9 @@
+.layui-form-pane .layui-form-label {
+    width: 160px;
+  	}
+.layui-form-pane .layui-input-block {
+    margin-left: 1px;
+    left: -1px;
+    float: left;
+    margin-top: -15px;
+}
